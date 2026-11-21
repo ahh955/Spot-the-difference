@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIRROR ISLES — Spot the Difference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <div class="brand">🪞 MIRROR ISLES</div>
+    <div class="scene-meta">
+      <span id="scene-name">Harbour at Dawn</span>
+      <span id="scene-tag">Scene 1 of 3 · Par 2:30</span>
+    </div>
+    <div id="scene-dots"></div>
+  </header>
+
+  <div id="hud">
+    <div id="counter">7 to find</div>
+    <div id="timer-wrap">
+      <span id="timer">2:30</span>
+      <div id="timer-track"><div id="timer-bar"></div></div>
+    </div>
+    <div id="strikes">Strikes: 0</div>
+    <div id="score">Score 0</div>
+    <button id="hint-btn">Hint (3)</button>
+    <button id="pause-btn">Pause</button>
+  </div>
+
+  <main>
+    <figure class="panel">
+      <figcaption>LEFT — original</figcaption>
+      <canvas id="panel-left" width="560" height="360"></canvas>
+    </figure>
+    <div id="vs">VS</div>
+    <figure class="panel">
+      <figcaption>RIGHT — spot the changes</figcaption>
+      <canvas id="panel-right" width="560" height="360"></canvas>
+    </figure>
+  </main>
+
+  <footer>Click a difference on either picture · <b>H</b> hint · <b>P</b> pause · wrong click costs 5 seconds</footer>
+
+  <div id="title-screen" class="overlay">
+    <div class="card">
+      <h1>🪞 MIRROR ISLES</h1>
+      <p class="tag">A spot-the-difference voyage in three scenes.</p>
+      <p>Two pictures. Seven differences. Find them all before the tide runs out.</p>
+      <ul>
+        <li>🏝️ Harbour at Dawn · 🌙 Night Market · 🌲 Forest Camp</li>
+        <li>💡 3 hints per scene &nbsp;·&nbsp; ⏱️ beat the par time for 3 stars</li>
+        <li>❌ a wrong click costs 5 seconds — look before you tap</li>
+      </ul>
+      <button id="play-btn" class="big">▶ Play — Scene 1</button>
+    </div>
+  </div>
+
+  <div id="pause-screen" class="overlay hidden">
+    <div class="card">
+      <h2>Paused</h2>
+      <p>The tide is holding. Take a breath.</p>
+      <button id="resume-btn" class="big">Resume</button>
+    </div>
+  </div>
+
+  <div id="complete-screen" class="overlay hidden">
+    <div class="card">
+      <h2 id="complete-title">Scene cleared!</h2>
+      <div id="complete-stars" class="stars">★★★</div>
+      <p id="complete-detail"></p>
+      <p id="complete-bonus"></p>
+      <button id="next-btn" class="big">Next scene →</button>
+    </div>
+  </div>
+
+  <div id="timeup-screen" class="overlay hidden">
+    <div class="card">
+      <h2>⏰ Time's up!</h2>
+      <p id="timeup-detail"></p>
+      <p>The differences are still out there. Try again?</p>
+      <button id="retry-btn" class="big">Retry scene</button>
+    </div>
+  </div>
+
+  <div id="results-screen" class="overlay hidden">
+    <div class="card">
+      <h2>🏆 Voyage complete!</h2>
+      <div id="results-stars" class="stars">★★★★★★★★★</div>
+      <p id="results-score" class="big-score"></p>
+      <div id="results-rows"></div>
+      <button id="again-btn" class="big">Play again</button>
+      <button id="title-btn">Title screen</button>
+    </div>
+  </div>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
